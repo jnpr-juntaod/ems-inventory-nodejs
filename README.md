@@ -1,2 +1,4 @@
-ems-inventory-nodejs
-====================
+devicemgmt
+==========
+
+Device management back-end service project.

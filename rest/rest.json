@@ -1,0 +1,4 @@
+{
+	"authenticate": "inherit",
+	"uri_prefix": "data"
+}

@@ -1,0 +1,31 @@
+{
+	"uri_prefix": "inherit",
+    "modules": [{
+        "name": "device-management",
+        "revision": "2014-07-26",
+        "namespace": "http://juniper.net/ns/space/device-management/1.0",
+        "apis": [
+            {
+                "protocol": "GET",
+                "chain": ["space_rbac"],
+                "uri": "devices",
+                "capabilities": [],
+                "params": [],
+                "validator": "yang:device-management",
+                "produces": ["application/yang.data+json", "application/yang.data+xml"],
+                "module": "devmgt.js",
+                "method": "getDevices"
+            },
+            {
+                "protocol": "GET",
+                "chain": [],
+                "uri-reg": "devices\/(device[=]?[^\/]+[^\/]$)",
+                "params": [{"name": "device", "type": "MatrixParam"}],
+                "validator": "yang:device-management/devices/device",
+                "produces": ["application/yang.data+json", "application/yang.data+xml"],
+                "module": "devmgt.js",
+                "method": "getDevice"
+            }
+        ]
+    }]
+}
